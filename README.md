@@ -5,7 +5,7 @@ Testes end-to-end utilizando Playwright e TypeScript.
 
 ### Comandos:
     npx playwright test  
-   // execução em todos os navegadores, conforme playwright.config
+    // execução em todos os navegadores, conforme playwright.config
 
     npx playwright show-report
     // relatório de testes (abre um servidor local) 
