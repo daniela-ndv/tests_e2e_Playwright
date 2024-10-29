@@ -1,0 +1,14 @@
+{
+  "name": "tests_e2e_playwright",
+  "version": "1.0.0",
+  "description": "📌 Testes end-to-end utilizando Playwright e TypeScript.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.8.4"
+  }
+}

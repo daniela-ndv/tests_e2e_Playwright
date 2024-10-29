@@ -4,11 +4,14 @@
 📄 Documentação oficial: https://playwright.dev/docs/intro
 
 ## Comandos:
+    npm init playwright@latest
+    // Instalar as dependências para rodar o projeto
+
     npx playwright test     
-    // execução em todos os navegadores, conforme playwright.config
+    // Execução em todos os navegadores, conforme playwright.config
 
     npx playwright show-report      
-    // relatório de testes (abre um servidor local) 
+    // Relatório de testes (HTML report) 
 
 Outras especificações:
     
@@ -20,6 +23,9 @@ Outras especificações:
     
     --workers=1         
     // Representa um WebWorker. Sendo igual a 1, realiza um teste por vez, na sequência do arquivo
+
+    --headed 
+    // Deixa o navegador visível quando todas os testes 
     
     --grep="nome_do_teste"      
     // Especifica qual teste executar
@@ -29,9 +35,11 @@ Exemplo com especificações:
     npx playwright test testes_gerais.spec.ts --project=chromium --workers=1
 
 
-#### Modo UI:
+## Modo UI:
 Com esse modo, é possível explorar, executar e depurar testes. Para abrir o modo UI, execute o seguinte comando no seu terminal:
 
     npx playwright test --ui
 
 
+## Estrutura dos testes:
+Utilizou-se um projeto local (front-end e API) para realizar os testes.
