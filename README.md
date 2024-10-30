@@ -3,6 +3,9 @@
 
 📄 Documentação oficial: https://playwright.dev/docs/intro
 
+### Instalar as dependências para rodar o projeto: 
+    npm init playwright@latest
+
 ## Comandos:
     npm init playwright@latest
     // Instalar as dependências para rodar o projeto
@@ -42,4 +45,5 @@ Com esse modo, é possível explorar, executar e depurar testes. Para abrir o mo
 
 
 ## Estrutura dos testes:
-Utilizou-se um projeto local (front-end e API) para realizar os testes.
+- Utilizou-se um projeto local (front-end e API) para realizar os testes.
+- Padrão Page Object Model. 
