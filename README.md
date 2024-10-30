@@ -28,7 +28,7 @@ Outras especificações:
     // Representa um WebWorker. Sendo igual a 1, realiza um teste por vez, na sequência do arquivo
 
     --headed 
-    // Deixa o navegador visível quando todas os testes 
+    // Deixa o navegador visível quando roda os testes 
     
     --grep="nome_do_teste"      
     // Especifica qual teste executar

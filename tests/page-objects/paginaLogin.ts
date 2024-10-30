@@ -37,4 +37,12 @@ export default class PaginaLogin {
         const elementoErro = this.page.getByText(msg);
         await expect(elementoErro).toBeVisible();
     }
+
+    async msgErroCamposEmBranco(email: string, senha: string, msg: string) {
+        const elementoErro = this.page.getByText(msg);
+        await this.inputEmail.fill(email);
+        await this.inputSenha.fill(senha);
+        await this.inputEmail.click(); 
+        await expect(elementoErro).toBeVisible();
+    }
 }

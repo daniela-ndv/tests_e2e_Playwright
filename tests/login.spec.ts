@@ -13,10 +13,20 @@ test.describe('login', () => {
 
     test('Não deve realizar login com e-mail inválido', async ({ page }) => {
         const loginPage = new PaginaLogin(page);
-
         await loginPage.visitar();
         await loginPage.fazerLogin('email.incorreto@teste.com', 'admin');
         await loginPage.msgErroLogin('Você não está autorizado a acessar este recurso');
+    });  
+
+    test('Não deve realizar login com campos em branco', async ({ page }) => {
+        const loginPage = new PaginaLogin(page);
+        await loginPage.visitar();
+        await loginPage.msgErroCamposEmBranco('', 'admin', 'E-mail é obrigatório');
+        await page.waitForTimeout(1000);
+        await page.reload();
+        await loginPage.msgErroCamposEmBranco('admin@teste.com', '', 'Senha é obrigatória');
+        await page.waitForTimeout(1000);
+        await page.reload();
     });  
 
 });
