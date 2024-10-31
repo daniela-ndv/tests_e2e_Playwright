@@ -1,7 +1,7 @@
 import {test} from '@playwright/test';
 import PaginaPrincipal from './page-objects/paginaPrincipal';
 
-test.describe('Buscar passagens', ( )=> {
+test.describe('buscar_passagens', ( )=> {
     test('Deve buscar passagens somente de ida', async ({ page }) => {
         const paginaPrincipal = new PaginaPrincipal(page);
 
