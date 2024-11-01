@@ -1,4 +1,4 @@
-import {test} from '@playwright/test';
+import {expect, test} from '@playwright/test';
 import PaginaPrincipal from './page-objects/paginaPrincipal';
 
 test.describe('buscar_passagens', ( )=> {
@@ -7,6 +7,7 @@ test.describe('buscar_passagens', ( )=> {
 
         await paginaPrincipal.visitar();
         await paginaPrincipal.definirSomenteIda();
+
         await paginaPrincipal.abrirModalPassageiros();
         await paginaPrincipal.definirPassageirosAdultos(3);
         await paginaPrincipal.definirPassageirosCriancas(1);
@@ -14,6 +15,9 @@ test.describe('buscar_passagens', ( )=> {
         await paginaPrincipal.fecharModalPassageiros();
 
         await paginaPrincipal.definirOrigemEDestino('minas gerais', 'rio de janeiro');
-
+        const dataIda = new Date(); 
+        await paginaPrincipal.definirData(dataIda);
+        await paginaPrincipal.buscarPassagens();
+        await paginaPrincipal.mostrarPassagem('Somente ida', 'Minas Gerais', 'Rio de Janeiro');
     });
 });
