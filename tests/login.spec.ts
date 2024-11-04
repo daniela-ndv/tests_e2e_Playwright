@@ -1,5 +1,5 @@
 import { test } from './page-objects/paginaLogin.ts';
-import paginaLogin from './page-objects/paginaLogin';
+import paginaLogin from './page-objects/paginaLogin.ts';
 
 test.describe('login', () => {
     test('Deve realizar login com e-mail e senha válidos', async ({ paginaLogin }) => {
