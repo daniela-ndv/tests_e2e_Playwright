@@ -1,5 +1,4 @@
-import { test } from './page-objects/paginaLogin.ts';
-import paginaLogin from './page-objects/paginaLogin.ts';
+import { test } from '../setup/fixtures.ts';
 
 test.describe('login', () => {
     test('Deve realizar login com e-mail e senha válidos', async ({ paginaLogin }) => {
@@ -14,11 +13,8 @@ test.describe('login', () => {
 
     test('Não deve realizar login com campos em branco', async ({ paginaLogin, page }) => {
         await paginaLogin.msgErroCamposEmBranco('', 'admin', 'E-mail é obrigatório');
-        await page.waitForTimeout(1000);
         await page.reload();
         await paginaLogin.msgErroCamposEmBranco('admin@teste.com', '', 'Senha é obrigatória');
-        await page.waitForTimeout(1000);
-        await page.reload();
     });  
 
 });

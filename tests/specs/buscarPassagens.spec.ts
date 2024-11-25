@@ -1,9 +1,7 @@
-import {expect, test} from '@playwright/test';
-import PaginaPrincipal from './page-objects/paginaPrincipal';
+import { test } from '../setup/fixtures';
 
 test.describe('buscar_passagens', ( )=> {
-    test('Deve buscar passagens somente de ida', async ({ page }) => {
-        const paginaPrincipal = new PaginaPrincipal(page);
+    test('Deve buscar passagens somente de ida', async ({ paginaPrincipal }) => {
 
         await paginaPrincipal.visitar();
         await paginaPrincipal.definirSomenteIda();

@@ -53,5 +53,6 @@ export default class PaginaLogin {
         await this.inputSenha.fill(senha);
         await this.inputEmail.click(); 
         await expect(elementoErro).toBeVisible();
+        await this.page.waitForTimeout(1000);
     }
 }

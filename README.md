@@ -48,3 +48,4 @@ Com esse modo, é possível explorar, executar e depurar testes. Para abrir o mo
 - Utilizou-se um projeto local (front-end e API) para realizar os testes.
 - Padrão Page Object Model. 
 - Fixture no teste de login (remover repetições).
+- Biblioteca faker.js para teste de cadastro. 
