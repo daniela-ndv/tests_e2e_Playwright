@@ -21,5 +21,5 @@ test.describe('Página de cadastro', () =>{
         await paginaCadastro.visitar();
         await paginaCadastro.cadastrarUsuario(novoUsuario);
         await paginaCadastro.estaMostrandoMensagemDeErro("E-mail já utilizado.");
-    })
+    });
 })
