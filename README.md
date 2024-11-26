@@ -50,3 +50,4 @@ Com esse modo, é possível explorar, executar e depurar testes. Para abrir o mo
 - Fixture no teste de login (remover repetições).
 - Fixture de escopo do worker (servir informações específicas de cada worker, a fim de usar um login para cada worker). 
 - Biblioteca faker.js para teste de cadastro. 
+- Compondo os Page Objects (componentes usados em duas páginas diferentes). 
