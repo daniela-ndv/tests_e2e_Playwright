@@ -1,13 +1,19 @@
+import { gerarPerfil } from "../operacoes/gerarPerfil";
 import { testeLogado } from "../setup/testeLogado";
 
 testeLogado.describe('Página de perfil', () =>{
 
-    testeLogado("Editar perfil 1", async ({ paginaPrincipal }) => { 
-        await paginaPrincipal.visitar();
-    });
+    testeLogado("Deve conseguir editar o perfil", async ({ paginaPerfil }) => { 
+        await paginaPerfil.visitar();
+            
+        const novosDados = gerarPerfil();
+        const emailAtual = await paginaPerfil.formBase.lerValorInputEmail();
 
-    testeLogado("Editar perfil 2", async ({ }) => { 
+        await paginaPerfil.atualizarUsuario({ ...novosDados, email: emailAtual }); // Sobrescrever somente a propriedade e-mail
+        await paginaPerfil.atualizadoComSucesso();
         
+        await paginaPerfil.visitar();
+        await paginaPerfil.dadosEstaoCorretos({ ...novosDados, email: emailAtual });
     });
 
    

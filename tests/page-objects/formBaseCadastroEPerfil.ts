@@ -1,16 +1,16 @@
 import { Locator, Page } from "@playwright/test";
-import { Genero } from "../operacoes/gerarPerfil";
+import { Genero, Perfil } from "../operacoes/gerarPerfil";
 import { formatarDataParaForm } from "../operacoes/datas";
 
 export default class formBaseCadastroEPerfil{
-    private readonly inputNome: Locator;
-    private readonly inputDataNascimento: Locator;
-    private readonly radioGenero: { [chave in Genero]: Locator;};
-    private readonly inputCpf: Locator;
-    private readonly inputCidade: Locator;
-    private readonly inputTelefone: Locator;
-    private readonly inputEstado: Locator;
-    private readonly inputEmail: Locator;
+    readonly inputNome: Locator;
+    readonly inputDataNascimento: Locator;
+    readonly radioGenero: { [chave in Genero]: Locator;};
+    readonly inputCpf: Locator;
+    readonly inputCidade: Locator;
+    readonly inputTelefone: Locator;
+    readonly inputEstado: Locator;
+    readonly inputEmail: Locator;
     private readonly inputSenha: Locator;
     private readonly inputConfirmarEmail: Locator;
     private readonly inputConfirmarSenha: Locator;
@@ -87,8 +87,25 @@ export default class formBaseCadastroEPerfil{
         await this.inputConfirmarSenha.fill(senha);
     }
 
+    async preencherForm(dados: Perfil){
+        await this.definirNome(dados.nome);
+        await this.definirDataNascimento(dados.dataNascimento);
+        await this.definirGenero(dados.genero);
+        await this.definirCPF(dados.cpf);
+        await this.definirTelefone(dados.telefone);
+        await this.definirCidade(dados.cidade);
+        await this.definirEstado(dados.estado);
+        await this.definirEmail(dados.email);
+        await this.confirmarEmail(dados.email);
+        await this.definirSenha(dados.senha);
+        await this.confirmarSenha(dados.senha);
+    }
+
     async submeterForm(){
         await this.botaoSubmeterForm.click();
     }
     
+    async lerValorInputEmail() {
+        return this.inputEmail.inputValue();
+    }
 }
