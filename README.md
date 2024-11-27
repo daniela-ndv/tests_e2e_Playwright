@@ -45,7 +45,7 @@ Com esse modo, é possível explorar, executar e depurar testes. Para abrir o mo
 
 
 ## Sobre os testes:
-- Projeto base para realizar os testes: projeto local (API e front-end com Angular).
+- Projeto base para realizar os testes: projeto local (front-end (com Angular) e API).
 - Padrão Page Object Model. 
 - Fixture no teste de login (remover repetições).
 - Fixture de escopo do worker (servir informações específicas de cada worker, a fim de usar um login para cada worker). 
